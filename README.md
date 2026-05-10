@@ -18,6 +18,22 @@ docker compose up --build
 
 4. Open http://localhost:3000
 
+## Background
+
+This project is a simplified **Micro-Agent Workflow Builder** that enables users to create sequential AI workflows by chaining together configurable nodes. The application demonstrates how agentic pipelines can combine user input, tool execution, and LLM reasoning to answer domain-specific questions.
+
+The workflow builder is centered around a sample use case using the Toronto Subway Delay Dataset. Users can submit natural language questions such as:
+
+“What were the main causes of delays at Union Station last Tuesday?”
+
+A typical workflow execution consists of:
+
+Input Node — captures the user query.
+Tool Node — queries a local subway delay database or performs analytical operations such as calculating average delays.
+Prompt Node — combines the original question with tool outputs and generates a human-readable response using an LLM prompt.
+
+The system supports dynamic workflow construction where users can add, remove, and reorder nodes within the pipeline. Variables produced by earlier nodes can be referenced by downstream nodes, enabling chained reasoning and tool-calling behavio
+
 ## System Architecture
 
 ![System Architecture](docs/diagrams/system_diagram.png)
@@ -52,7 +68,7 @@ sequenceDiagram
 
     %% --- Run ---
     User->>Web: Click Run
-    Web->>API: POST /executions { workflow_id }
+    Web->>API: POST /executions/{workflow_id}
     API->>DB: INSERT execution (status=running)
     API->>Q: Enqueue job
     API-->>Web: 202 { id, status: running }
