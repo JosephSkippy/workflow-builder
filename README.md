@@ -1,4 +1,4 @@
-# mini-workflow-builder
+# workflow-builder
 
 A micro-agent workflow builder POC — drag-and-drop nodes to create linear AI pipelines.
 
@@ -9,7 +9,7 @@ A micro-agent workflow builder POC — drag-and-drop nodes to create linear AI p
 
 ```bash
 git clone <repo-url>
-cd mini-workflow-builder
+cd workflow-builder
 
 # Create backend/.env and add your OpenAI API key
 # OPENAI_API_KEY=your-api-key-here
