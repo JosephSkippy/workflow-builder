@@ -5,17 +5,14 @@ A micro-agent workflow builder POC — drag-and-drop nodes to create linear AI p
 ## Quick Start
 
 1. Run Docker Desktop
-2. Create `backend/.env` with your OpenAI API key:
-
-```
-OPENAI_API_KEY=your-api-key-here
-```
-
-3. Run the commands below:
+2. Run the commands below:
 
 ```bash
 git clone <repo-url>
 cd mini-workflow-builder
+
+# Create backend/.env and add your OpenAI API key
+# OPENAI_API_KEY=your-api-key-here
 docker compose up --build
 ```
 
@@ -132,7 +129,7 @@ At ~100 concurrent users, workers call OpenAI directly — the request volume is
 | **workflows**  | RDS    | Both work. Key-retrieval pattern suits NoSQL, but not write-heavy and RDS is already in the stack. Node configs stored as JSON column for flexibility |
 | **executions** | RDS    | Same as workflows — fetched by ID or listed by workflow ID. Execution steps stored as JSON column                                                     |
 
-> **Schema derivation** — for *why* each column exists (UI sketch → data each panel renders → schema columns that fall out), see [`docs/development.md` § Page Design & Schema Derivation](docs/development.md#page-design--schema-derivation).
+> **Schema derivation** — for _why_ each column exists (UI sketch → data each panel renders → schema columns that fall out), see [`docs/development.md` § Page Design & Schema Derivation](docs/development.md#page-design--schema-derivation).
 
 ### Workflow Configuration Modification — Edit in Place vs Clone
 
