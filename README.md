@@ -38,7 +38,7 @@ The system supports dynamic workflow construction where users can add, remove, a
 
 ![Product](docs/diagrams/product.png)
 
-The dynamic builder lets non-engineers answer domain questions that need both **real data lookup** and **LLM reasoning** — by composing the three node types instead of writing code.
+The dynamic builder lets non-engineers answer domain questions that need both **real data lookup** and **LLM reasoning** — by chaining nodes together instead of writing code.
 
 For example, a transit analyst asking *"What's the delay at Victoria station?"* builds:
 
