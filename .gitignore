@@ -1,0 +1,5 @@
+CLAUDE.md
+backend/data/*.db
+.env
+backend/.env
+docs/builder.md
