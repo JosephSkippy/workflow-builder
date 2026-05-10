@@ -36,6 +36,8 @@ The system supports dynamic workflow construction where users can add, remove, a
 
 ## System Architecture
 
+Note: Below diagram shows a more detailed diagram compare to the actual app.
+
 ![System Architecture](docs/diagrams/system_diagram.png)
 
 ## Sequence Diagram
