@@ -34,6 +34,20 @@ Prompt Node — combines the original question with tool outputs and generates a
 
 The system supports dynamic workflow construction where users can add, remove, and reorder nodes within the pipeline. Variables produced by earlier nodes can be referenced by downstream nodes, enabling chained reasoning and tool-calling behavio
 
+## The Product
+
+![Product](docs/diagrams/product.png)
+
+The dynamic builder lets non-engineers answer domain questions that need both **real data lookup** and **LLM reasoning** — by composing the three node types instead of writing code.
+
+For example, a transit analyst asking *"What's the delay at Victoria station?"* builds:
+
+1. **Input Node** — `station: victoria`
+2. **Tool Node** — `get_subway_query` with `station_name: {{station}}`
+3. **Prompt Node** — `"What is the delay at {{station}} based on {{get_subway_query_output}}"`
+
+The same three primitives recompose for any new question — swap the station, swap the tool, rewrite the prompt — no code change, no deploy.
+
 ## System Architecture
 
 Note: Below diagram shows a more detailed diagram compare to the actual app.
